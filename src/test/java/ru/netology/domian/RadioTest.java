@@ -3,29 +3,55 @@ package ru.netology.domian;
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.Radio;
 
+import static org.junit.jupiter.api.Assertions.*;
 
 public class RadioTest {
 
     @Test
-    public void test() {
+    public void get() {
+
         Radio fm = new Radio();
 
-        fm.currentRadioStation = 15;
+        fm.currentStation = 7;
 
-        int expected = 15;
-        int actual = fm.currentRadioStation;
+        int expected = 7;
+        int actual = fm.getCurrentStation();
 
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 
     @Test
-    public void test() {
+    public void set() {
+
         Radio fm = new Radio();
-        fm.currentRadioStation = 11;
+
+        fm.setCurrentStation(10);
+
         int expected = 0;
-        int actual = fm.getCurrentRadioStation();
+        int actual = fm.getCurrentStation();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void next() {
+
+        Radio fm = new Radio();
+        fm.setCurrentStation(9);
+
+
+        fm.nextCurrentRadioStation();
+
+        int expected = 0;
+        int actual = fm.getCurrentStation();
+
         assertEquals(expected, actual);
     }
 
 }
+
+
+
+
+
 
